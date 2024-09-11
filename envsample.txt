@@ -1,0 +1,1 @@
+VITE_BACKENDURL=backend_url_of_the_app
