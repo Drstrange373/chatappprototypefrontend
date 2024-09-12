@@ -12,7 +12,8 @@ export async function getAiTextResponse(url, messages) {
         body: JSON.stringify({ messages:filteredMessages })
     });
     if (!response.ok) {
-        alert(response.statusText);
+        const res = await response.json()
+        alert(res.error || "Something went wrong, try reloading the app")
         throw new Error(response.statusText)
     }
     return response.json()
