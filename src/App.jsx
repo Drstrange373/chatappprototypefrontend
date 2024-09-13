@@ -26,6 +26,9 @@ function App() {
         setMessages(prev => prev.concat([res]))
         setLoading(false)
       })
+    .catch(()=>{
+      setMessages(prev=>prev.concat([{role:'assistant', content:''}]))
+    })
     
 
   }, [messages])
