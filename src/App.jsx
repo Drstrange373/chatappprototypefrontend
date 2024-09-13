@@ -75,7 +75,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>Welcome to this dummy chat app with AI full of BUGS!!</h1>
+        <h1>SnapTalk</h1>
 
         <div className="message-container" style={{ height: '90vh', width: '100vw', margin: '30px', display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
           {messages.map(message =>
@@ -86,7 +86,7 @@ function App() {
         {/* <div  >Loading.......</div> */}
         {loading && <div style={{ position: 'fixed', bottom: '60px', left: '0' }}  >Loading.......</div>}
 
-          {urlImage && <img src={urlImage} alt="currentImage"  style={{ position: 'fixed', bottom: '50px', right: '0' }}/>}
+          {urlImage && <img width={100} height={70} src={urlImage} alt="currentImage"  style={{ position: 'fixed', bottom: '50px', right: '0' }}/>}
         <div style={{ position: 'fixed', bottom: '0', left: '0' }}>
           
           <input disabled={urlImage} ref={inputRef} style={{ height: '30px', width: '80vw' }}></input>
