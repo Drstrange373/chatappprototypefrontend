@@ -1,9 +1,11 @@
+import Markdown from "react-markdown"
+import remarkGfm from "remark-gfm"
 // import { useEffect, useState } from "react"
 
 /* eslint-disable react/prop-types */
 export default function RenderMessage({ role, content, urlToImage }) {
     // const [paused, setPaused] = useState(true)
-    
+
     // useEffect(()=>{
     //     const utterance = new SpeechSynthesisUtterance(content)
     //     if(!urlToImage && !paused){
@@ -29,7 +31,15 @@ export default function RenderMessage({ role, content, urlToImage }) {
 
         <div>
             <strong className="message">{role}:</strong>
-            <span>{content}</span>
+            <Markdown
+                components={{
+                    a: (props) => <a {...props} target='_blank' rel='noopener noreferrer' />
+                    
+                }}
+
+                remarkPlugins={[remarkGfm]}
+                className={'markdown-editor'}
+            >{content}</Markdown>
             {/* <button style={{marginLeft:'20px'}} onClick={()=>setPaused(!paused)}>
                 <img
                     height={10}
